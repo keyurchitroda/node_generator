@@ -1,0 +1,23 @@
+const express = require("express")
+const app = express()
+const port = process.env.PORT || 1234
+app.set('port',port);
+const routes = require("../src/routes")
+const model = require("../src/model")
+const Cors = require("cors")
+
+model.sequelize.sync().then(() => {
+    console.log('Drop and Resync with { force: true }');
+  });
+
+  app.use(express.json())
+app.use(express.urlencoded({ extended:true }))
+
+app.use(Cors())
+
+
+app.use("/api/v1",routes)
+
+app.listen(app.get('port'),()=>{
+    console.log(`Server running on port : ${app.get('port')}`);
+});

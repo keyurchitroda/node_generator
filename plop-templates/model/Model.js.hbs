@@ -1,0 +1,14 @@
+module.exports = (sequelize,Sequelize) =>{
+const {{pascalCase name}}Model = sequelize.define("{{pascalCase name}}",{
+    id:{
+        allowNull: false,
+        type: Sequelize.INTEGER,
+        autoIncrement: true,
+        primaryKey: true
+    }
+    },{
+        freezeTableName: true,
+        paranoid : true
+    })
+    return {{pascalCase name}}Model
+}
