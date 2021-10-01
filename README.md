@@ -2,7 +2,7 @@
 
 step-1 :  npm install
 
-step-2 : npm run generate and first select create config file
+step-2 : run command - npm run generate and first select create config file
 
 step-3 : in .env file add you database credential
 
